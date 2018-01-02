@@ -11,18 +11,21 @@ class Pool:
     maxPoolSize = 49
     normalPoolsize= 49
     
-    def __init__(self):
+    def __init__(self,minSize=minPoolSize,maxSize=maxPoolSize):
         self.balls = []        
         self.size = len(self.balls)
+        self.minSize = minSize
+        self.maxSize = maxSize
         
-    def __init__(self,balls):
-        self.size = len(balls)
-        if(self.size < Pool.minPoolSize or
-           self.size > Pool.maxPoolSize):
-            print("the Pool size is out of bounds [{1}-{2}] : {0}"
-                  .format(self.size,
-                          Pool.minPoolSize,
-                          Pool.maxPoolSize))
-        self.balls = balls
+    def fill(self,fillTable):
+        fillSize = len(fillTable)
+        if(fillSize < self.minSize or fillSize > self.maxSize):
+            print("Size table out of bounds : {0} not in [{1};{2}]"
+                  .format(fillSize,self.minSize,self.maxSize))
+            return
+        self.balls = fillTable
         
+    def pop(self,rank):
+        return self.balls.pop(rank-1)
+    
         
