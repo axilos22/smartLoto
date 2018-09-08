@@ -1,8 +1,8 @@
 import random as rd
 import numpy as np
 
-from ball import Ball
-from pool import Pool
+#from ball import Ball
+#from pool import Pool
 
 ### RULES ###
 #Choose 5 numbers between 1 and 49
