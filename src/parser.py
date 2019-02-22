@@ -1,8 +1,10 @@
 import csv
+import pandas as pd
 
-with open("res/db.csv","r") as dbFile:
-    reader = csv.reader(dbFile, delimiter=";")
-    for row in reader:
-        print(row)
-        # msg = ", ".join(row)
-        # print(msg)
+folder = "../ressources/"
+filename = "trainingSet.csv"
+file = folder+filename
+
+data = pd.read_csv(file,';',None,0)
+
+print(data.head())
