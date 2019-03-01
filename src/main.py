@@ -1,9 +1,9 @@
 # GLOBAL import
-import importlib
 import random as rd
 import numpy as np
 #LOCAL
 from drawing import Drawing
+from csvParser import Parser
 
 ### RULES ###
 #Choose 5 numbers between 1 and 49
@@ -30,11 +30,14 @@ def generateRandomDraw():
     ball5 = pool[ranks[4]]
     print("b1={0}\tb2={1}\tb3={2}\tb4={3}\tb5={4}\tL={5}".format(ball1,ball2,ball3,ball4,ball5,luckNb))
 
-testDraw = Drawing("01/01/1990",[1,2,3,4,5],9)
-testDraw1 = Drawing("02/01/1990",[5,4,3,2,1],1)
-testDraw2 = Drawing("03/01/1990",[1,2,4,3,5],2)
-testDraw3 = Drawing("04/01/1990",[49,48,47,46,45],5)
+#testDraw = Drawing("01/01/1990",[1,2,3,4,5],9)
+#testDraw1 = Drawing("02/01/1990",[5,4,3,2,1],1)
+#testDraw2 = Drawing("03/01/1990",[1,2,4,3,5],2)
+#testDraw3 = Drawing("04/01/1990",[49,48,47,46,45],5)
+#
+#print(testDraw,testDraw1,testDraw2,testDraw3)
 
-print(testDraw,testDraw1,testDraw2,testDraw3)
+filename = "trainingSet.csv"
 
-
+parser = Parser(filename)
+parser.showData()
