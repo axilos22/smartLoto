@@ -41,3 +41,5 @@ filename = "trainingSet.csv"
 
 parser = Parser(filename)
 parser.showData()
+
+parser.computeBasicStats()
